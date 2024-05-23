@@ -1,0 +1,5 @@
+<select name="cars" id="{{dropdownId}}" (change)="changeSelectedOption()" [(ngModel)]="selectedOptionDescription">
+    @for(option of options; track option){
+        <option [value]="option.description">{{option.description}}</option>
+    }
+</select>

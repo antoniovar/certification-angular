@@ -1,0 +1,32 @@
+<h1>Step 3: Summary</h1>
+<h3>Your Tesla {{modelSelected?.description}}</h3>
+<div class="rows">
+    <div class="columns">
+        <p>{{selectedConfig?.description}}</p>
+        <p>{{selectedConfig?.price | currency}}</p>
+    </div>
+    <span>Range: {{selectedConfig?.range}} miles - Max Speed:{{selectedConfig?.speed}} - Price {{selectedConfig?.price | currency}}</span>
+    <div class="columns">
+        <p>{{colorSelected?.description}}</p>
+        <p>{{colorSelected?.price | currency}}</p>
+    </div>
+    @if(wantYoke){
+        <div class="columns">
+            <p>Yoke steering wheel</p>
+            <p>{{1000 | currency }}</p>
+        </div>
+    }
+    @if(wantHitch){
+        <div class="columns">
+            <p>Tow Hitch Package</p>
+            <p>{{1000 | currency }}</p>
+        </div>
+    } 
+    <hr>
+    <div class="columns">
+        <p>Total Cost</p>
+        <p>{{totalCost | currency }}</p>
+    </div>
+    <hr>
+
+</div>

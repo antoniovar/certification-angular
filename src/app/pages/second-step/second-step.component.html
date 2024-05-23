@@ -1,0 +1,26 @@
+<h1>Step 2: Select your config and options</h1>
+@if(isReady){
+  <div class="formContainer">
+    <div class="row">
+      <span>Config:</span>
+      <dropdown [options]="configOptions" dropdownId="configSelect" [selectedOption]="selectedConfig" (changeSelected)="changeSelectedoption($event)"></dropdown>
+    </div>
+    <div class="row">
+      <span>Range: {{selectedConfig?.range}} miles - Max Speed:{{selectedConfig?.speed}} - Price {{selectedConfig?.price | currency}}</span>
+    </div>
+    @if(carConfigurationAndOptions.towHitch){
+      <div class="row">
+        <span>Tow hitch?</span>
+        <input type="checkbox" [checked]="hitchChecked" id="includeTow" [disabled]="!carConfigurationAndOptions.towHitch" (change)="changedExtras($event, 'hitch')"/>
+      </div>
+    }
+    @if(carConfigurationAndOptions.yoke){
+      <div class="row">
+        <span>Yoke steering wheel?</span>
+        <input type="checkbox" [checked]="yokeChecked" id="includeYoke" [disabled]="!carConfigurationAndOptions.yoke" (change)="changedExtras($event, 'yoke')"/>
+      </div>
+    }
+    
+  </div>
+}
+
