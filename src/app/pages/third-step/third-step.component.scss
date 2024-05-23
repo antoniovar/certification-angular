@@ -1,0 +1,11 @@
+h1 {
+    margin-left: 0;
+  }
+.rows{
+  display:flex;
+  flex-direction: column;
+}
+.columns{
+  display:flex;
+  justify-content: space-between;
+}

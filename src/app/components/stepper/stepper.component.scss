@@ -1,0 +1,10 @@
+.stepperContainer {
+    width: 100%;
+    display: flex;
+    background-color: #404040;
+    height: 50px;
+    step {
+      flex: 1;
+    }
+  }
+  
