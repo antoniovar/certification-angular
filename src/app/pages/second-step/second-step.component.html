@@ -8,14 +8,19 @@
     <div class="row">
       <span>Range: {{selectedConfig?.range}} miles - Max Speed:{{selectedConfig?.speed}} - Price {{selectedConfig?.price | currency}}</span>
     </div>
-    <div class="row">
-      <span>Tow hitch?</span>
-      <input type="checkbox" id="includeTow" [disabled]="!carConfigurationAndOptions.towHitch" (change)="changedExtras($event, 'hitch')"/>
-    </div>
-    <div class="row">
-      <span>Yoke steering wheel?</span>
-      <input type="checkbox" id="includeYoke" [disabled]="!carConfigurationAndOptions.yoke" (change)="changedExtras($event, 'yoke')"/>
-    </div>
+    @if(carConfigurationAndOptions.towHitch){
+      <div class="row">
+        <span>Tow hitch?</span>
+        <input type="checkbox" [checked]="hitchChecked" id="includeTow" [disabled]="!carConfigurationAndOptions.towHitch" (change)="changedExtras($event, 'hitch')"/>
+      </div>
+    }
+    @if(carConfigurationAndOptions.yoke){
+      <div class="row">
+        <span>Yoke steering wheel?</span>
+        <input type="checkbox" [checked]="yokeChecked" id="includeYoke" [disabled]="!carConfigurationAndOptions.yoke" (change)="changedExtras($event, 'yoke')"/>
+      </div>
+    }
+    
   </div>
 }
 

@@ -16,6 +16,8 @@ export class SecondStepComponent implements OnInit {
   carConfigurationAndOptions!: CarConfigurationAndOptions;
   configOptions: CarConfiguration[] = [];
   isReady: boolean = false;
+  hitchChecked?: boolean;
+  yokeChecked?: boolean;
 
   get selectedConfig(): CarConfiguration | undefined {
     return this.dataSelected.getConfigSelected();
@@ -25,6 +27,8 @@ export class SecondStepComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCarConfiguration();
+    this.hitchChecked = this.dataSelected.getWantTowHitch();
+    this.yokeChecked = this.dataSelected.getWantYoke();
   }
 
   /* Initialize data and values */
